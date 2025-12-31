@@ -1,69 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RS — Production Infrastructure</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #111827;
-            -webkit-font-smoothing: antialiased;
-        }
-        .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Smooth transitions */
-        .fade-enter { opacity: 0; }
-        .fade-enter-active { opacity: 1; transition: opacity 300ms ease-in; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RS — Production Infrastructure</title>
 
-        ::selection {
-            background-color: #B8904D;
-            color: white;
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    ::selection {
+      background-color: #B8904D;
+      color: white;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'rs-black': '#0A0A0A',
+            'rs-gold': '#B8904D',
+            'rs-gray-title': '#111827',
+            'rs-gray-body': '#374151',
+            'rs-gray-aux': '#6B7280',
+            'rs-gray-micro': '#9CA3AF',
+            'rs-gray-border': '#E5E7EB',
+          },
+          letterSpacing: {
+            'ultra-wide': '0.25em',
+          },
+          lineHeight: {
+            'editorial': '1.15',
+          }
         }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'rs-black': '#0A0A0A',
-                        'rs-gold': '#B8904D',
-                        'rs-gray-title': '#111827',
-                        'rs-gray-body': '#374151',
-                        'rs-gray-aux': '#6B7280',
-                        'rs-gray-micro': '#9CA3AF',
-                        'rs-gray-border': '#E5E7EB',
-                    },
-                    letterSpacing: {
-                        'ultra-wide': '0.25em',
-                    },
-                    lineHeight: {
-                        'editorial': '1.15',
-                    }
-                }
-            }
-        }
-    </script>
-<script type="importmap">
-{
-  "imports": {
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-  }
-}
-</script>
+      }
+    }
+  </script>
 </head>
-<body>
-    <div id="root"></div>
+
+<body class="min-h-screen">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center px-6">
+    <div class="max-w-4xl text-center">
+      <p class="text-sm tracking-ultra-wide uppercase text-rs-gray-micro mb-6">
+        Production Infrastructure
+      </p>
+
+      <h1 class="font-serif text-5xl md:text-6xl leading-editorial mb-8">
+        You record.<br>
+        We handle the rest.
+      </h1>
+
+      <p class="text-lg text-rs-gray-body max-w-2xl mx-auto mb-12">
+        A production and post-production system designed for professional service firms.
+        Structured. Predictable. Scalable.
+      </p>
+
+      <div class="flex justify-center gap-4">
+        <a href="#process"
+           class="border border-rs-black px-8 py-3 text-xs tracking-ultra-wide uppercase hover:bg-rs-black hover:text-white transition">
+          View Process
+        </a>
+        <a href="#contact"
+           class="bg-rs-black text-white px-8 py-3 text-xs tracking-ultra-wide uppercase hover:opacity-80 transition">
+          Request Access
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="py-24 border-t border-rs-gray-border px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-4 gap-10 text-center">
+      <div>
+        <p class="text-xs uppercase tracking-ultra-wide text-rs-gray-micro mb-3">01</p>
+        <p class="font-serif text-xl">We structure the script</p>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-ultra-wide text-rs-gray-micro mb-3">02</p>
+        <p class="font-serif text-xl">You record from your office</p>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-ultra-wide text-rs-gray-micro mb-3">03</p>
+        <p class="font-serif text-xl">AI-assisted editing</p>
+      </div>
+      <div>
+        <p class="text-xs uppercase tracking-ultra-wide text-rs-gray-micro mb-3">04</p>
+        <p class="font-serif text-xl">Videos delivered ready to post</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-rs-gray-border text-center text-xs text-rs-gray-micro">
+    © 2025 RS Production Infrastructure
+  </footer>
+
 </body>
 </html>
